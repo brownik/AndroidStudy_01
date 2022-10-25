@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data>
+        <variable
+            name="dataModel"
+            type="com.example.androidstudy_01.common.OptionData" />
+        <variable
+            name="viewModel"
+            type="com.example.androidstudy_01.list_adapter.OptionDataViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/titleLayer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvOptionNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/option"
+                android:textColor="#111111"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="44dp"
+                android:layout_height="20dp"
+                android:background="@drawable/del_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/setOptionLayer"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="9.5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleLayer">
+
+            <View
+                android:id="@+id/viewSetOption"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/custom_white_box"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/etSetOption"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="14dp"
+                android:text="@{dataModel.optionContent}"
+                android:background="@color/transparent"
+                android:hint="내용을 입력하세요."
+                android:textColor="#111111"
+                android:textSize="14dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
